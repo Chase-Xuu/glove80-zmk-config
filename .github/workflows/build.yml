@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: darknao/zmk
-          ref: darknao/rgb-dts
+          ref: rgb-layer-24.12
           path: src
       - uses: cachix/install-nix-action@v25
         with:
