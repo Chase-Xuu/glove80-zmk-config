@@ -18,6 +18,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/rgb_colors.h>
 
 /* On demand includes */
 #include <dt-bindings/zmk/input_transform.h>
@@ -79,94 +80,9 @@
 
 /* To deal with the situation where there is no Lower layer, to keep &lower happy */
 #ifndef LAYER_Lower
-#define LAYER_Lower 0
 #endif
 
 /* Custom Device-tree */
-/ {
-    underglow-layer {
-        compatible = "zmk,underglow-layer";
-        base {
-            bindings = <
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug 0x9B72CF &ug 0x9B72CF &ug 0x9B72CF &ug 0x9B72CF &ug ___ &ug ___ &ug 0x9B72CF &ug 0x9B72CF &ug 0x9B72CF &ug 0x9B72CF &ug ___ &ug ___
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug 0xFFD700 &ug 0x00B4D8 &ug ___ &ug 0xFFD700 &ug 0x2EC4B6 &ug ___ &ug 0xFFAA00 &ug ___ &ug ___
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-            >;
-            layer-id = <LAYER_HRM_macOS>;
-        };
-        cursor {
-            bindings = <
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug 0x00B4D8 &ug 0x00B4D8 &ug 0x00B4D8 &ug 0x4EA8DE &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug 0x00B4D8 &ug 0x00B4D8 &ug 0x00B4D8 &ug 0xFF6B6B &ug ___ &ug 0xFF6B6B &ug 0x00B4D8 &ug 0x00B4D8 &ug 0x00B4D8 &ug 0x00B4D8
-                &ug ___ &ug ___ &ug 0x9B72CF &ug 0x9B72CF &ug 0x9B72CF &ug 0xFF6B6B &ug ___ &ug 0xFF6B6B &ug 0x00B4D8 &ug 0x00B4D8 &ug 0x00B4D8 &ug 0x00B4D8 &ug ___ &ug ___
-                &ug ___ &ug ___ &ug 0x4EA8DE &ug 0x4EA8DE &ug 0x4EA8DE &ug 0xFF6B6B &ug ___ &ug 0xFF6B6B &ug 0x00B4D8 &ug 0x00B4D8 &ug 0x00B4D8 &ug 0x00B4D8
-                &ug ___ &ug ___ &ug 0x4EA8DE &ug 0x4EA8DE &ug 0x4EA8DE &ug ___ &ug ___ &ug 0x4EA8DE &ug 0x4EA8DE &ug 0x4EA8DE
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-            >;
-            layer-id = <LAYER_Cursor>;
-        };
-        symbol {
-            bindings = <
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug 0xFFAA00 &ug 0xFFAA00 &ug 0xFFF5E1 &ug 0xFFF5E1 &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug 0xFFAA00 &ug 0xFFAA00 &ug 0xFFAA00 &ug 0xFFAA00 &ug 0xFFF5E1 &ug ___ &ug 0x00B4D8 &ug 0x00B4D8 &ug 0x00B4D8 &ug ___ &ug ___
-                &ug ___ &ug 0xFFAA00 &ug 0x4EA8DE &ug 0x4EA8DE &ug 0x4EA8DE &ug 0x4EA8DE &ug ___ &ug 0xFFF5E1 &ug 0xFFF5E1 &ug 0xFFF5E1 &ug 0xFFF5E1 &ug 0xFFF5E1 &ug ___ &ug ___
-                &ug ___ &ug 0xFFAA00 &ug 0xFFF5E1 &ug 0x4EA8DE &ug 0xFFF5E1 &ug 0xFFF5E1 &ug ___ &ug 0xFFF5E1 &ug 0x9B72CF &ug 0x9B72CF &ug 0x9B72CF &ug 0xFFF5E1
-                &ug ___ &ug 0xFFAA00 &ug 0xFFF5E1 &ug 0xFFF5E1 &ug 0xFFF5E1 &ug ___ &ug ___ &ug 0x9B72CF &ug 0x9B72CF &ug 0x9B72CF
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-            >;
-            layer-id = <LAYER_Symbol>;
-        };
-        mouse {
-            bindings = <
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug 0x4EA8DE &ug 0x2EC4B6 &ug 0x4EA8DE &ug ___ &ug 0x4EA8DE &ug 0xFF6B6B &ug 0xFF6B6B &ug 0xFF6B6B &ug 0xFF6B6B &ug ___
-                &ug 0x4EA8DE &ug ___ &ug 0x2EC4B6 &ug 0x2EC4B6 &ug 0x2EC4B6 &ug 0x4EA8DE &ug 0x4EA8DE &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug ___ &ug ___ &ug ___ &ug ___
-                &ug 0x4EA8DE &ug ___ &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0x4EA8DE &ug 0x4EA8DE &ug 0x2EC4B6 &ug 0x2EC4B6 &ug 0x2EC4B6 &ug 0x2EC4B6 &ug ___
-                &ug ___ &ug ___ &ug 0xFF6B6B &ug 0xFF6B6B &ug 0xFF6B6B &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug 0xFF6B6B &ug 0xFF6B6B &ug 0xFF6B6B &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug 0xFF6B6B &ug 0xFF6B6B &ug ___ &ug ___ &ug ___ &ug ___
-            >;
-            layer-id = <LAYER_Mouse>;
-        };
-        gaming {
-            bindings = <
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug 0x9B72CF &ug 0x9B72CF &ug 0x9B72CF &ug ___
-                &ug 0xFF6B6B &ug ___ &ug 0x4EA8DE &ug 0x4EA8DE &ug 0x4EA8DE &ug 0x4EA8DE &ug 0x9B72CF &ug 0x9B72CF &ug 0x9B72CF &ug ___
-                &ug ___ &ug 0x4EA8DE &ug 0x4EA8DE &ug 0x4EA8DE &ug 0x4EA8DE &ug 0x4EA8DE &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug ___ &ug 0xFF6B6B &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug 0xFF6B6B &ug 0xFF6B6B &ug 0xFF6B6B &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug 0xFF6B6B &ug ___ &ug ___ &ug ___ &ug 0xFF6B6B &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-            >;
-            layer-id = <LAYER_Gaming>;
-        };
-        lower {
-            bindings = <
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug 0x9B72CF &ug 0x9B72CF &ug 0x9B72CF &ug 0x9B72CF &ug 0x9B72CF &ug 0x00B4D8 &ug ___ &ug 0x4EA8DE &ug 0x4EA8DE &ug 0x4EA8DE
-                &ug ___ &ug ___ &ug 0x9B72CF &ug 0x9B72CF &ug 0x9B72CF &ug ___ &ug ___ &ug 0x4EA8DE &ug 0x4EA8DE &ug 0x4EA8DE &ug ___ &ug ___
-                &ug ___ &ug ___ &ug ___ &ug 0x00B4D8 &ug ___ &ug 0x00B4D8 &ug ___ &ug 0xFFF5E1 &ug 0x4EA8DE &ug 0x4EA8DE &ug 0x4EA8DE &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug 0x00B4D8 &ug 0x00B4D8 &ug 0x00B4D8 &ug 0x00B4D8 &ug ___ &ug 0xFFF5E1 &ug 0x4EA8DE &ug 0x4EA8DE &ug 0x4EA8DE &ug ___
-                &ug ___ &ug ___ &ug 0x9B72CF &ug 0x9B72CF &ug 0x9B72CF &ug ___ &ug ___ &ug 0xFFF5E1 &ug 0x4EA8DE &ug 0x4EA8DE
-                &ug 0xFFD700 &ug 0xFFAA00 &ug 0x9B72CF &ug 0x9B72CF &ug ___ &ug ___ &ug 0x4EA8DE &ug 0x4EA8DE &ug 0x4EA8DE &ug ___
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-            >;
-            layer-id = <LAYER_Lower>;
-        };
-    };
-};
-
 /* Input Listeners */
 &mmv_input_listener {
     // LAYER_MouseSlow
@@ -990,7 +906,7 @@
  *   White     0xFFF5E1 - Special chars
  *   Gold      0xFFD700 - Layer switches
  *   ___       LED off
- * ============================ */
+
 
 / {
     underglow-layer {
@@ -998,74 +914,122 @@
 
         base {
             bindings = <
-                &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___
-                &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___
-                &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___
-                &ug ___  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x9B72CF  &ug ___  &ug ___  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x9B72CF  &ug ___
-                &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug 0xFFD700  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___
-                &ug 0xFFD700  &ug ___  &ug ___  &ug ___  &ug ___  &ug 0xFFD700  &ug 0xFFAA00  &ug 0x00B4D8  &ug ___  &ug ___  &ug 0x2EC4B6  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___
+            &ug 0x888822 &ug 0x888822 &ug 0x888822 &ug 0x888822 &ug 0x888822 &ug 0x888822 &ug 0x888822 &ug 0x888822 &ug 0xcc8833 &ug 0xcc8833
+            &ug 0x996688 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0x996688
+            &ug 0x1a4a7a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x996688
+            &ug 0x666655 &ug 0x1a4a7a &ug 0x1a4a7a &ug 0x1a4a7a &ug 0x1a4a7a &ug 0x1a7a4a &ug 0x666655 &ug 0x1a4a7a &ug 0x1a4a7a &ug 0x1a4a7a &ug 0x1a4a7a &ug 0x996688
+            &ug 0x996688 &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x7a2a9a &ug 0x1a4a7a &ug 0x7a2a9a &ug 0x1a4a7a &ug 0x1a4a7a &ug 0x1a4a7a
+            &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0xaa3344
+            &ug 0x7a2a9a &ug 0xaa3344 &ug 0xaa3344 &ug 0xaa3344 &ug 0xaa3344 &ug 0x1a4a7a
+            &ug 0x7a2a9a &ug 0x1a7a4a &ug 0x1a4a7a &ug 0x7a2a9a &ug 0x7a2a9a
+            &ug 0xaa3344 &ug 0xaa3344 &ug 0x996688 &ug 0x996688 &ug 0xaa3344
             >;
             layer-id = <LAYER_HRM_macOS>;
         };
 
-        gaming {
-            bindings = <
-                &ug 0xFF6B6B  &ug ___  &ug ___  &ug ___  &ug ___  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0x4EA8DE
-                &ug ___  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x9B72CF
-                &ug ___  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug 0x9B72CF
-                &ug ___  &ug ___  &ug ___  &ug 0xFF6B6B  &ug 0xFF6B6B  &ug 0xFF6B6B  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___
-                &ug ___  &ug ___  &ug 0xFF6B6B  &ug 0xFF6B6B  &ug 0xFF6B6B  &ug 0xFF6B6B  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___
-                &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug 0xFF6B6B  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___
-            >;
-            layer-id = <LAYER_Gaming>;
-        };
-
         cursor {
             bindings = <
-                &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___
-                &ug ___  &ug 0x00B4D8  &ug 0x00B4D8  &ug 0x00B4D8  &ug 0x00B4D8  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___
-                &ug ___  &ug ___  &ug ___  &ug 0xFFF5E1  &ug 0xFFF5E1  &ug 0x00B4D8  &ug 0xFF6B6B  &ug 0x00B4D8  &ug 0x00B4D8  &ug 0x00B4D8  &ug 0x00B4D8  &ug ___
-                &ug ___  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0xFF6B6B  &ug 0xFF6B6B  &ug 0x00B4D8  &ug 0x00B4D8  &ug 0x00B4D8  &ug 0x00B4D8  &ug ___
-                &ug ___  &ug ___  &ug ___  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0xFF6B6B  &ug ___  &ug ___  &ug ___  &ug ___  &ug 0xFF6B6B  &ug 0x00B4D8  &ug 0x00B4D8  &ug 0x00B4D8  &ug 0x00B4D8  &ug ___  &ug ___  &ug ___
-                &ug ___  &ug ___  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0xFF6B6B  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___
+            &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+            &ug ___ &ug 0x666655 &ug 0x666655 &ug 0x666655 &ug 0x666655 &ug 0x666655 &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+            &ug ___ &ug 0xcc4444 &ug 0x1a7a4a &ug 0x1a4a7a &ug 0x666655 &ug 0xcc4444 &ug 0xcc4444 &ug 0x1a4a7a &ug 0xcc4444 &ug 0xcc4444 &ug 0x1a4a7a &ug ___
+            &ug 0x1a4a7a &ug 0x1a4a7a &ug 0x1a4a7a &ug 0x1a4a7a &ug 0x1a4a7a &ug 0xcc4444 &ug 0xcc4444 &ug 0xaa3344 &ug 0xaa3344 &ug 0xaa3344 &ug 0xaa3344 &ug 0x1a4a7a
+            &ug 0xcc4444 &ug 0xcc4444 &ug 0xcc4444 &ug 0xcc4444 &ug 0xcc4444 &ug 0xcc4444 &ug ___ &ug ___ &ug ___ &ug 0xcc4444 &ug 0xcc4444 &ug 0xcc4444
+            &ug 0xcc4444 &ug 0xaa3344 &ug 0xaa3344 &ug 0xaa3344 &ug 0xaa3344 &ug 0xcc4444
+            &ug 0xcc4444 &ug 0xcc4444 &ug 0xcc4444 &ug 0xcc4444 &ug 0xcc4444 &ug ___
+            &ug ___ &ug ___ &ug 0xcc4444 &ug 0xcc4444 &ug 0xcc4444
+            &ug 0xcc4444 &ug 0xcc4444 &ug 0xcc4444 &ug 0xcc4444 &ug 0xcc4444
             >;
             layer-id = <LAYER_Cursor>;
         };
 
         symbol {
             bindings = <
-                &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___
-                &ug ___  &ug 0xFFF5E1  &ug 0xFFAA00  &ug 0xFFAA00  &ug 0xFFF5E1  &ug 0xFFF5E1  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___
-                &ug ___  &ug 0xFFAA00  &ug 0xFFAA00  &ug 0xFFAA00  &ug 0xFFAA00  &ug 0xFFF5E1  &ug 0xFFF5E1  &ug 0xFFF5E1  &ug 0x00B4D8  &ug 0x00B4D8  &ug 0x00B4D8  &ug ___
-                &ug ___  &ug 0xFFAA00  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0xFFAA00  &ug 0xFFAA00  &ug 0xFFF5E1  &ug 0xFFF5E1  &ug 0xFFF5E1  &ug 0xFFF5E1  &ug 0xFFF5E1  &ug ___
-                &ug ___  &ug 0xFFAA00  &ug 0xFFAA00  &ug 0x4EA8DE  &ug 0xFFAA00  &ug 0xFFAA00  &ug 0xFFF5E1  &ug 0xFFF5E1  &ug 0xFFAA00  &ug ___  &ug ___  &ug 0xFFF5E1  &ug 0xFFF5E1  &ug 0xFFF5E1  &ug 0xFFF5E1  &ug ___  &ug ___  &ug ___
-                &ug ___  &ug ___  &ug 0xFFAA00  &ug 0xFFF5E1  &ug 0xFFF5E1  &ug 0x4EA8DE  &ug 0xFFAA00  &ug ___  &ug ___  &ug ___  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x9B72CF  &ug ___  &ug ___
+            &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+            &ug ___ &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+            &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x666655 &ug 0x1a4a7a &ug 0x666655 &ug 0x666655 &ug ___
+            &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x666655 &ug 0x1a4a7a &ug 0x1a7a4a &ug 0x1a7a4a &ug ___
+            &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug ___ &ug ___ &ug ___
+            &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug ___
+            &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688
+            &ug 0x996688 &ug 0x996688 &ug ___ &ug ___ &ug ___
+            &ug 0x1a4a7a &ug 0x1a4a7a &ug 0x1a4a7a &ug 0x1a4a7a &ug ___
             >;
             layer-id = <LAYER_Symbol>;
         };
 
         mouse {
             bindings = <
-                &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___
-                &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___
-                &ug ___  &ug ___  &ug ___  &ug 0x4EA8DE  &ug 0x2EC4B6  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0x2EC4B6  &ug 0x2EC4B6  &ug 0x2EC4B6  &ug 0x4EA8DE  &ug ___
-                &ug ___  &ug 0x4EA8DE  &ug 0x2EC4B6  &ug 0x2EC4B6  &ug 0x2EC4B6  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0xFFD700  &ug 0xFFD700  &ug 0xFFD700  &ug ___  &ug ___
-                &ug ___  &ug 0x4EA8DE  &ug 0xFFD700  &ug 0xFFD700  &ug 0xFFD700  &ug 0x4EA8DE  &ug 0x2EC4B6  &ug ___  &ug ___  &ug ___  &ug 0x4EA8DE  &ug 0x2EC4B6  &ug 0x2EC4B6  &ug 0x2EC4B6  &ug 0x2EC4B6  &ug ___  &ug ___  &ug ___
-                &ug ___  &ug ___  &ug 0xFF6B6B  &ug 0xFF6B6B  &ug 0xFF6B6B  &ug 0xFF6B6B  &ug 0xFF6B6B  &ug ___  &ug ___  &ug ___  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x9B72CF  &ug ___  &ug ___
+            &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+            &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+            &ug ___ &ug ___ &ug 0x2288aa &ug 0x2288aa &ug 0x2288aa &ug ___ &ug 0x2288aa &ug 0x228855 &ug 0x228855 &ug 0x228855 &ug 0x2288aa &ug ___
+            &ug ___ &ug 0x2288aa &ug 0x2288aa &ug 0x2288aa &ug 0x2288aa &ug 0x2288aa &ug 0x2288aa &ug 0x7a2a9a &ug 0x7a2a9a &ug 0x7a2a9a &ug 0x666655 &ug 0x228855
+            &ug ___ &ug 0x2288aa &ug 0x7a2a9a &ug 0x7a2a9a &ug 0x7a2a9a &ug 0x2288aa &ug 0x228855 &ug 0x666655 &ug 0x228855 &ug 0xcc4444 &ug 0xcc4444 &ug 0xcc4444
+            &ug 0x2288aa &ug 0x2288aa &ug 0x2288aa &ug 0x2288aa &ug 0x2288aa &ug 0x228855
+            &ug ___ &ug ___ &ug 0xcc4444 &ug 0xcc4444 &ug 0xcc4444 &ug 0x228855
+            &ug 0x228855 &ug 0x228855 &ug ___ &ug ___ &ug ___
+            &ug 0x1a4a7a &ug 0x1a4a7a &ug 0x1a4a7a &ug 0x1a4a7a &ug ___
             >;
             layer-id = <LAYER_Mouse>;
         };
 
+        gaming {
+            bindings = <
+            &ug 0x666655 &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x666655 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833
+            &ug 0x1a7a4a &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833
+            &ug 0x1a7a4a &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0xcc8833
+            &ug 0x1a7a4a &ug 0x1a4a7a &ug 0x1a7a4a &ug 0x44aa44 &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x996688 &ug 0x996688
+            &ug 0x1a7a4a &ug 0x1a4a7a &ug 0x44aa44 &ug 0x44aa44 &ug 0x44aa44 &ug 0x1a7a4a &ug 0x1a4a7a &ug 0x1a4a7a &ug 0x1a7a4a &ug 0x666655 &ug 0xaa3344 &ug 0xcc4444
+            &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688
+            &ug 0x1a7a4a &ug 0x1a4a7a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x1a7a4a &ug 0x1a7a4a
+            &ug 0x1a4a7a &ug 0xcc4444 &ug 0xaa3344 &ug 0xaa3344 &ug 0xaa3344
+            &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688
+            >;
+            layer-id = <LAYER_Gaming>;
+        };
+
         lower {
             bindings = <
-                &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x9B72CF  &ug ___  &ug ___
-                &ug ___  &ug ___  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x00B4D8  &ug 0xFFAA00  &ug 0xFFD700  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug ___
-                &ug ___  &ug ___  &ug ___  &ug 0x00B4D8  &ug ___  &ug 0x00B4D8  &ug 0xFFAA00  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug ___
-                &ug ___  &ug ___  &ug 0x00B4D8  &ug 0x00B4D8  &ug 0x00B4D8  &ug 0x00B4D8  &ug 0xFFAA00  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug ___
-                &ug ___  &ug ___  &ug ___  &ug 0x9B72CF  &ug 0x9B72CF  &ug 0x00B4D8  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug 0xFFF5E1  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug ___  &ug ___
-                &ug 0xFFD700  &ug 0xFFD700  &ug 0xFFD700  &ug 0x9B72CF  &ug 0x9B72CF  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug ___  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug 0x4EA8DE  &ug ___
+            &ug 0x888822 &ug 0x888822 &ug 0x888822 &ug 0x888822 &ug 0x888822 &ug 0x888822 &ug 0x888822 &ug 0x888822 &ug ___ &ug 0x888822
+            &ug ___ &ug ___ &ug 0x888822 &ug 0x888822 &ug 0x888822 &ug 0xaa3344 &ug 0x996688 &ug 0x666655 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x666655
+            &ug ___ &ug ___ &ug ___ &ug 0xaa3344 &ug ___ &ug 0xaa3344 &ug 0x996688 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0x996688 &ug 0x666655
+            &ug ___ &ug ___ &ug 0xaa3344 &ug 0xaa3344 &ug 0xaa3344 &ug 0xaa3344 &ug 0x996688 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0x996688 &ug ___
+            &ug ___ &ug 0x666655 &ug ___ &ug 0xcc8833 &ug 0xcc8833 &ug 0xaa3344 &ug ___ &ug ___ &ug 0x7a2a9a &ug ___ &ug ___ &ug ___
+            &ug 0x996688 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug ___
+            &ug 0x7a2a9a &ug 0x666655 &ug 0x666655 &ug 0xcc8833 &ug 0xcc8833 &ug ___
+            &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+            &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug ___
             >;
             layer-id = <LAYER_Lower>;
+        };
+
+        magic {
+            bindings = <
+            &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug 0xaa2222 &ug 0xaa2222
+            &ug 0x7a2a9a &ug ___ &ug 0x7a2a9a &ug ___ &ug ___ &ug 0x7a2a9a &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+            &ug ___ &ug 0x888822 &ug 0x888822 &ug 0x888822 &ug 0x888822 &ug 0x888822 &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+            &ug 0xff2222 &ug 0x888822 &ug 0x888822 &ug 0x888822 &ug 0x888822 &ug 0x888822 &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug 0xff2222
+            &ug 0xff8800 &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug 0x2244aa &ug 0x2244aa &ug ___ &ug ___ &ug ___ &ug ___
+            &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug 0xff8800
+            &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug 0x2244aa
+            &ug 0x2244aa &ug 0x888822 &ug ___ &ug ___ &ug ___
+            &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+            >;
+            layer-id = <LAYER_Magic>;
+        };
+
+        pysym {
+            bindings = <
+            &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+            &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+            &ug 0x996688 &ug 0x996688 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug ___ &ug ___ &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688
+            &ug 0x996688 &ug 0x996688 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug ___ &ug ___ &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug ___
+            &ug 0x996688 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug 0xcc8833 &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+            &ug ___ &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug 0x996688 &ug ___
+            &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+            &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+            &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+            >;
+            layer-id = <LAYER_PySym>;
         };
 
     };
